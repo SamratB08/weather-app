@@ -21,7 +21,7 @@ function App() {
         const forecastResponse = await response[1].json();
 
         setCurrrentWeather({city: searchData.label, ...weatherResponse});
-        setForecast({city: searchData.label,forecastResponse});
+        setForecast({city: searchData.label, ...forecastResponse});
       })
       .catch((err) => console.log(err));
   }
@@ -32,7 +32,7 @@ function App() {
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
-      <Forecast />
+      {forecast && <Forecast data={forecast} />}
     </div>
   );
 }
