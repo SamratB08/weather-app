@@ -1,10 +1,41 @@
 import "./current-weather.css"
 
 const CurrentWeather = ({data}) => {
+    const today = new Date();
+    const day = today.getDay();
+    const date = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}`;
+    console.log(today.getDay());
+    var newDay;
+    switch(day){
+        case 0:
+            newDay = "Sunday";
+            break;
+        case 1:
+            newDay = "Monday";
+            break;
+        case 2:
+            newDay = "Tuesday";
+            break;
+        case 3:
+            newDay = "Wednesday";
+            break;
+        case 4:
+            newDay = "Thursday";
+            break;
+        case 5:
+            newDay = "Friday";
+            break;
+        case 6:
+            newDay = "Saturday";
+            break;
+        default:
+            break;
+    }
     return (
         <div className="weather">
             <div className="top">
                 <div>
+                    <p className="city">{newDay +" "+ date}</p>
                     <p className="city">{data.city}</p>
                     <p className="weather-description">{data.weather[0].description}</p>
                 </div>

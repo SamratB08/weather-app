@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className="container">
+      <p className="app-name">Weather Information</p>
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}

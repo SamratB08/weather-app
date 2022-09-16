@@ -2,3 +2,9 @@
   max-width: 1080px;
   margin: 20px auto;
 }
+
+.app-name {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
